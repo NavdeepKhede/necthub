@@ -12,7 +12,7 @@ const CommentWidget = ({ comment, handleSubmitComment }) => {
   const { palette } = useTheme();
 
   const getComments = async () => {
-    const response = await fetch(`http://localhost:3001/comment/${commentId}`, {
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/comment/${commentId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
